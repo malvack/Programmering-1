@@ -16,3 +16,4 @@ HelloWorld/obj/Debug/netcoreapp2.2/HelloWorld.AssemblyInfoInputs.cache
 HelloWorld/obj/Debug/netcoreapp2.2/HelloWorld.assets.cache
 HelloWorld/obj/Debug/netcoreapp2.2/HelloWorld.csproj.CoreCompileInputs.cache
 HelloWorld/obj/Debug/netcoreapp2.2/HelloWorld.csproj.FileListAbsolute.txt
+.gitignore
