@@ -6,7 +6,6 @@ namespace Uppgift1
     {
         static void Main(string[] args)
         {
-            /*
             /*  
                 Deklarera variabler.
                 Valde string för fNamn, eNamn och då jag läser in värden i med ReadLine() funktionen.
@@ -17,7 +16,7 @@ namespace Uppgift1
             int alder, antalDagar;
 
             // Läs in för- och efternamn i variablarna fNamn, eNamn och hälsa välkommen.
-            Console.WriteLine("------------ Uppgift 1 ------------");
+            Console.WriteLine("------------------------ Uppgift 1 ------------------------");
             Console.WriteLine("Ange ditt förnamn:");
             fNamn = Console.ReadLine();
             Console.WriteLine("Ange ditt efternamn:");
@@ -37,10 +36,10 @@ namespace Uppgift1
             antalDagar = alder * 365;
 
             // Skriv ut värdet i int variablen dagar.
-            Console.WriteLine("Visste du {0}, att du är {1} dagar gammal!", fNamn, antalDagar);
+            Console.WriteLine("Visste du {0}, att du är ungefär {1} dagar gammal.", fNamn, antalDagar);
 
             // Extra uppgifter //
-            Console.WriteLine("---------- Extra Uppgift ----------");
+            Console.WriteLine("---------------------- Extra Uppgift ----------------------");
 
             // Spara dagens datum i idag variablen.
             DateTime idag = DateTime.Now;
@@ -53,15 +52,27 @@ namespace Uppgift1
                 Console.WriteLine("Du måste ange din födelsedag i formatet åååå-mm-dd!");
             }
 
-            // Räkna ut antal timmar, minuter och sekunder användaren har levt.
+            // Räkna ut antal födelsedagar, månader, dagar, timmar, minuter och sekunder användaren har levt.
             TimeSpan tid = idag - birthday;
-            int totalTimmar = Convert.ToInt32(tid.TotalHours);
-            int totalMinuter = Convert.ToInt32(tid.TotalMinutes);
-            int totalSekunder = Convert.ToInt32(tid.TotalSeconds);
 
-            // Presentera resultatet för användaren
-            Console.WriteLine("Du har levt i {0} timmar eller {1} minuter eller {2} sekunder.", totalTimmar, totalMinuter, totalSekunder);
+            // Har valt att använda Decimal varibalar här för att få mer exakta värden. Med int så tappade jag massa data.
+            Decimal totalAr = Convert.ToDecimal(tid.TotalDays) / 365;
+            Decimal totalManad = totalAr * 12;
+            Decimal totalDagar = Convert.ToDecimal(tid.TotalDays);
+            Decimal totalTimmar = Convert.ToDecimal(tid.TotalHours);
+            Decimal totalMinuter = Convert.ToDecimal(tid.TotalMinutes);
+            Decimal totalSekunder = Convert.ToDecimal(tid.TotalSeconds);
 
+           // Presentera resultatet för användaren. Har valt att presentera värdena med ToString("0") för att inte ha med decimalerna.
+            Console.WriteLine("------------------------ Statistik ------------------------");
+            Console.WriteLine("Antal födelsedagar: {0}", totalAr.ToString("0.00"));
+            Console.WriteLine("Antal månader:      {0}", totalManad.ToString("0"));
+            Console.WriteLine("Antal dagar:        {0}", totalDagar.ToString("0"));
+            Console.WriteLine("Antal timmar:       {0}", totalTimmar.ToString("0"));
+            Console.WriteLine("Antal minuter:      {0}", totalMinuter.ToString("0"));
+            Console.WriteLine("Antal sekunder:     {0}", totalSekunder.ToString("0"));
+            Console.WriteLine("-----------------------------------------------------------");
+            Console.ReadLine();
         }
     }
 }
