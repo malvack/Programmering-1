@@ -1,7 +1,4 @@
-# Min Programmering 1 C# Kurs
+# Programmering 1 C# Kurs
 
-Testar lite GIT och VS Code!
+Testar lite GIT, VS Code och Visual Studio 2017!
 
-## Uppgift 1
-
-Uppgift 1!
